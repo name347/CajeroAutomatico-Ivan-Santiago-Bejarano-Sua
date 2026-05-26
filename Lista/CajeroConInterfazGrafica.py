@@ -79,12 +79,12 @@ def hacer_deposito():
     try:
         monto = float(txt_monto.get())
         if cuenta.depositar(monto):
-            messagebox.showinfo("Éxito", "Dinero depositado correctamente.")
+            messagebox.showinfo("Dinero depositado correctamente.")
             actualizar_pantalla()
         else:
-            messagebox.showerror("Error", "Monto no válido.")
+            messagebox.showerror("Valor escrito no valido para depositar")
     except ValueError:
-        messagebox.showerror("Error", "Por favor ingresa un número válido.")
+        messagebox.showerror("No valido ingrese un número válido.")
 
 def hacer_retiro():
     try:
@@ -97,9 +97,9 @@ def hacer_retiro():
             messagebox.showinfo("Éxito", f"Retiro exitoso. Comisión cobrada: ${comision:,.0f}")
             actualizar_pantalla()
         else:
-            messagebox.showerror("Error", "Saldo insuficiente (recuerde la comisión).")
+            messagebox.showerror("Valor no valido para retirar tu saldo es insuficiente.")
     except ValueError:
-        messagebox.showerror("Error", "Por favor ingresa un número válido.")
+        messagebox.showerror("No valido por favor ingresa un número válido.")
 
 ventana = tk.Tk()
 ventana.title("Cajero Automático")
